@@ -1,11 +1,12 @@
-export const metadata = {
-  title: "Pagina inicial",
-};
+import ProductCard from "@/components/ProductCard";
+import data from "@/utils/data";
 
 const Home = () => {
   return (
-    <main>
-      <h1>Home Page</h1>
+    <main className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      {data.products.map((product) => (
+        <ProductCard product={product} key={product.slug} />
+      ))}
     </main>
   );
 };
